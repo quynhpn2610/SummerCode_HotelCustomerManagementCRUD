@@ -24,6 +24,9 @@ public class CustomerService implements ICustomerService{
         if (customersList.isEmpty()){
             System.out.println("No customer to show");
         }
+        for (int i = 0; i < customersList.size(); i++) {
+            System.out.println(customersList.get(i).toString());
+        }
     }
 
     @Override
@@ -70,6 +73,7 @@ public class CustomerService implements ICustomerService{
 
     @Override
     public void showCustomer(int id) {
+
 
     }
 //    dien thong tin
