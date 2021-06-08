@@ -50,6 +50,21 @@ public class CustomerService implements ICustomerService{
 
     @Override
     public void deleteCustomer(int id) {
+        int count = 0;
+        if(customersList.isEmpty()){
+            System.out.println("No customer to delete");
+            return;
+        }
+        for (int i = 0; i < customersList.size(); i++) {
+            if(id == customersList.get(i).getId()){
+                customersList.remove(i);
+            }
+            count++;
+        }
+        if(count == 0){
+            System.out.println("Cannot delete");
+        }
+        System.out.println("Successfully deleted");
 
     }
 
