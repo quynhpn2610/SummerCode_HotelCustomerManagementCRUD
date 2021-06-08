@@ -73,6 +73,16 @@ public class CustomerService implements ICustomerService{
 
     @Override
     public void showCustomer(int id) {
+        if (customersList.isEmpty()){
+            System.out.println("No customer to show");
+            return;
+        }
+        for (int i = 0; i < customersList.size(); i++) {
+            if(id == customersList.get(i).getId()){
+                customersList.get(i).toString();
+            }
+            System.out.println("No such customer to show");
+        }
 
 
     }
