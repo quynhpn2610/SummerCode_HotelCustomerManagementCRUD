@@ -35,4 +35,9 @@ public class Room {
     public void addCustomers(Customer c) {
         customers.add(c);
     }
+
+    public Room(int roomType, double roomRate) {
+        this.roomType = roomType;
+        this.roomRate = roomRate;
+    }
 }
