@@ -4,9 +4,11 @@ import model.Customer;
 import model.Room;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CustomerService implements ICustomerService{
     static Room[] rooms = new Room[3];
+    Scanner sc = new Scanner(System.in);
     static {
         rooms[0] = new Room(1, 100000);
         rooms[1] = new Room(2, 200000);
@@ -86,6 +88,33 @@ public class CustomerService implements ICustomerService{
 
 
     }
+
+    @Override
+    public Room selectRoom() {
+        System.out.println("1 - Standard - Rate 500,000");
+        System.out.println("2 - VIP - Rate 1,000,000");
+        System.out.println("3 - Luxury - Rate 1,500,000");
+        int roomType = Integer.parseInt(sc.nextLine());
+        switch (roomType) {
+            case 1:
+                return rooms[0];
+            case 2:
+                return rooms[1];
+            case 3:
+                return rooms[2];
+        }
+        return null;
+    }
+
+
+    @Override
+    public void printRoom(){
+        System.out.println("------Room List------");
+        for (Room room : rooms){
+            System.out.println("Room " + room.getRoomType());
+        }
+    }
+
 //    dien thong tin
 //    select room -> 2
 //    rooms[1].addCustomer(c);

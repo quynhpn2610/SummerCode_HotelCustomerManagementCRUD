@@ -1,6 +1,7 @@
 package service;
 
 import model.Customer;
+import model.Room;
 
 public interface ICustomerService {
     void saveCustomer(Customer c);
@@ -12,4 +13,10 @@ public interface ICustomerService {
     void deleteCustomer(int id);
 
     void showCustomer(int id);
+
+    Room selectRoom();
+
+    void printRoom();
+
+
 }
