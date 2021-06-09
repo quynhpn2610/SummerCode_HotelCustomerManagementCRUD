@@ -25,7 +25,7 @@ public class Room {
     }
 
     public ArrayList<Customer> getCustomers() {
-        return (ArrayList<Customer>) customers.clone();
+        return customers;
     }
 
     public void setCustomers(ArrayList<Customer> customers) {
@@ -39,5 +39,12 @@ public class Room {
     public Room(int roomType, double roomRate) {
         this.roomType = roomType;
         this.roomRate = roomRate;
+    }
+
+    public Room(int roomType, double roomRate, ArrayList<Customer> customers) {
+        this.roomType = roomType;
+        this.roomRate = roomRate;
+        this.customers = customers;
+
     }
 }
