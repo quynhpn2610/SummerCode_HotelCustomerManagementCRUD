@@ -41,7 +41,7 @@ public class CustomerService implements ICustomerService {
     public void saveCustomer(Customer c) {
         Room selectedRoom = selectRoom();
         selectedRoom.addCustomers(c);
-        System.out.println("Check in ");
+        System.out.println("Check in successfully");
     }
 
     @Override
@@ -67,8 +67,8 @@ public class CustomerService implements ICustomerService {
                 c.setName(newName);
                 c.setId(newId);
                 c.setLengthOfStay(newLengthofStay);
+                count++;
             }
-            count++;
         }
         if (count == 0) {
             System.out.println("Cannot update");
@@ -89,6 +89,3 @@ public class CustomerService implements ICustomerService {
 }
 
 
-//    dien thong tin
-//    select room -> 2
-//    rooms[1].addCustomer(c);
