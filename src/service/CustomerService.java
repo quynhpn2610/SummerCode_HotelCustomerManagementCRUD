@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CustomerService implements ICustomerService {
-    static Room[] rooms = new Room[3];
+    public static Room[] rooms = new Room[3];
     Scanner sc = new Scanner(System.in);
 
     static {
         rooms[0] = new Room(1, 100000);
         rooms[1] = new Room(2, 200000);
-        rooms[3] = new Room(3, 500000);
+        rooms[2] = new Room(3, 500000);
     }
 
     ArrayList<Customer> customersList = new ArrayList<>();
@@ -78,7 +78,7 @@ public class CustomerService implements ICustomerService {
 
     @Override
     // Check out
-    public void deleteCustomer(Room roomToDelete, int id) {
+    public void deleteCustomer(Room roomToDelete) {
         if (roomToDelete.getCustomers().isEmpty()) {
             System.out.println("Room empty. No customer to check out!");
             return;
