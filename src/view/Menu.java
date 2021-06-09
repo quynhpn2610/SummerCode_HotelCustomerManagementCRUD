@@ -42,7 +42,7 @@ public class Menu {
         return rooms[roomNumber-1];
     }
 
-    static int getCustomerIdToUpdate(){
+    static int getIdToUpdate(){
         System.out.println("Enter customer id");
         return (Integer.parseInt(sc.nextLine()));
     }

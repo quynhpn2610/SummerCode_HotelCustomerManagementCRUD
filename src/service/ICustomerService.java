@@ -8,7 +8,7 @@ public interface ICustomerService {
 
     void showAllCustomer(Room r);
 
-    void updateCustomer(Room r, int id, String newName, int newId, int newLengthofStay);
+    void updateCustomer(Room r, int id, String newName, int newId, int newLengthOfStay);
 
     void deleteCustomer(Room r);
 
