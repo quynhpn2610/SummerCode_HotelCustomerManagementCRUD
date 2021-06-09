@@ -27,6 +27,17 @@ public class Main {
                         int idToUpdate = Menu.getIdToUpdate();
                         Customer updatedCustomer = Menu.getUpdatedCustomerInfo();
                         cService.updateCustomer(roomToUpdate, idToUpdate, updatedCustomer.getName(), updatedCustomer.getId(), updatedCustomer.getLengthOfStay());
+                        break;
+                    case 4: // Delete
+                        Room roomToDelete = Menu.getRoomNumber();
+                        cService.deleteCustomer(roomToDelete);
+                        break;
+                    case 5: // Quit
+                        System.out.println("Closing program!");
+                        condition = false;
+                        break;
+                    default: // When user fails to input 1-5
+                        System.out.println("Invalid input. Please try again.");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please try again.");;
