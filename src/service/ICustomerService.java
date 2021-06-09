@@ -10,7 +10,7 @@ public interface ICustomerService {
 
     void updateCustomer(Room r, int id, String newName, int newId, int newLengthofStay);
 
-    void deleteCustomer(Room r, int id);
+    void deleteCustomer(Room r);
 
     Room selectRoom();
 
