@@ -47,13 +47,13 @@ public class Menu {
         return (Integer.parseInt(sc.nextLine()));
     }
 
-    static Customer getNewCustomerInfo(){
+    static Customer getUpdatedCustomerInfo(){
         System.out.println("---Update new info---");
-        System.out.println("Enter new id");
+        System.out.println("Enter updated id");
         int newId = Integer.parseInt(sc.nextLine());
-        System.out.println("Enter new name");
+        System.out.println("Enter updated name");
         String newName = sc.nextLine();
-        System.out.println("Enter new length of stay");
+        System.out.println("Enter updated length of stay");
         int newLength = Integer.parseInt(sc.nextLine());
         return new Customer(newName, newId, newLength);
     }

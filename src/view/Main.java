@@ -25,7 +25,7 @@ public class Main {
                     case 3: // Update
                         Room roomToUpdate = Menu.getRoomNumber();
                         int idToUpdate = Menu.getIdToUpdate();
-                        Customer updatedCustomer = Menu.getNewCustomerInfo();
+                        Customer updatedCustomer = Menu.getUpdatedCustomerInfo();
                         cService.updateCustomer(roomToUpdate, idToUpdate, updatedCustomer.getName(), updatedCustomer.getId(), updatedCustomer.getLengthOfStay());
                 }
             } catch (NumberFormatException e) {
