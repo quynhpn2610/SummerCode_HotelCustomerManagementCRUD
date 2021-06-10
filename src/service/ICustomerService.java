@@ -12,6 +12,10 @@ public interface ICustomerService {
 
     void deleteCustomer(Room r);
 
+    double calculateCost(Room r);
+
     Room selectRoom();
+
+    boolean isEmpty(Room r);
 
 }

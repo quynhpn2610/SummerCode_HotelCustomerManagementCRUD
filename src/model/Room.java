@@ -8,6 +8,7 @@ public class Room {
     private double roomRate;
     private ArrayList<Customer> customers = new ArrayList<>();
 
+
     public int getRoomType() {
         return roomType;
     }

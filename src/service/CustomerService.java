@@ -37,6 +37,14 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
+    public boolean isEmpty(Room room) {
+        if (room.getCustomers().isEmpty()){
+            System.out.println("Room is empty.");
+            return true;}
+        return false;
+    }
+
+    @Override
     // Check in
     public void saveCustomer(Customer c) {
         Room selectedRoom = selectRoom();
@@ -46,11 +54,10 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public void showAllCustomer(Room roomToShow) {
-        if (roomToShow.getCustomers().isEmpty()) {
-            System.out.println("No customer to show");
-        }
-        for (int i = 0; i < roomToShow.getCustomers().size(); i++) {
-            System.out.println(roomToShow.getCustomers().get(i).toString());
+        if (!isEmpty(roomToShow)) {
+            for (int i = 0; i < roomToShow.getCustomers().size(); i++) {
+                System.out.println(roomToShow.getCustomers().get(i).toString());
+            }
         }
     }
 
@@ -85,6 +92,15 @@ public class CustomerService implements ICustomerService {
         }
         roomToDelete.getCustomers().removeAll(roomToDelete.getCustomers());
         System.out.println("Successfully deleted");
+    }
+
+    @Override
+    public double calculateCost(Room roomToCalculate) {
+        double rate = roomToCalculate.getRoomRate();
+        Customer c = roomToCalculate.getCustomers().get(0);
+        int lengthOfStay = c.getLengthOfStay();
+        double totalCost = rate * lengthOfStay;
+        return totalCost;
     }
 }
 
