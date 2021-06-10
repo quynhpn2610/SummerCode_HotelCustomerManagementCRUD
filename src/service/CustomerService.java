@@ -9,9 +9,9 @@ public class CustomerService implements ICustomerService {
     Scanner sc = new Scanner(System.in);
 
     static {
-        rooms[0] = new Room(1, 100000);
-        rooms[1] = new Room(2, 200000);
-        rooms[3] = new Room(3, 500000);
+        rooms[0] = new Room(1, 500000);
+        rooms[1] = new Room(2, 1000000);
+        rooms[2] = new Room(3, 1500000);
     }
 
     @Override
