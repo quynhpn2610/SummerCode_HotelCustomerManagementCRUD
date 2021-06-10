@@ -13,25 +13,29 @@ public class CustomerService implements ICustomerService {
     static {
         rooms[0] = new Room(1, 100000);
         rooms[1] = new Room(2, 200000);
-        rooms[2] = new Room(3, 500000);
+        rooms[3] = new Room(3, 500000);
     }
 
     ArrayList<Customer> customersList = new ArrayList<>();
 
     @Override
     public Room selectRoom() {
-        System.out.println("------Select a room type------");
-        System.out.println("1 - Standard - Rate 500,000");
-        System.out.println("2 - VIP - Rate 1,000,000");
-        System.out.println("3 - Luxury - Rate 1,500,000");
-        int roomType = Integer.parseInt(sc.nextLine());
-        switch (roomType) {
-            case 1:
-                return rooms[0];
-            case 2:
-                return rooms[1];
-            case 3:
-                return rooms[2];
+        try {
+            System.out.println("------Select a room type------");
+            System.out.println("1 - Standard - Rate 500,000");
+            System.out.println("2 - VIP - Rate 1,000,000");
+            System.out.println("3 - Luxury - Rate 1,500,000");
+            int roomType = Integer.parseInt(sc.nextLine());
+            switch (roomType) {
+                case 1:
+                    return rooms[0];
+                case 2:
+                    return rooms[1];
+                case 3:
+                    return rooms[2];
+            }
+        } catch (NumberFormatException exception){
+            System.out.println("Invalid input. Please try again.");
         }
         return null;
     }
