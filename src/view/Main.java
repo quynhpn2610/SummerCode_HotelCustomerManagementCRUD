@@ -14,7 +14,7 @@ public class Main {
             try{
                 int userChoice = Menu.getUserChoice();
                 switch (userChoice){
-                    case 1: // Create/Save/Add
+                    case 1: // Create/Save/Add - check in
                         Customer newCustomer = Menu.getCustomerToAdd();
                         cService.saveCustomer(newCustomer);
                         break;

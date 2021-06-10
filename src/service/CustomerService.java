@@ -37,6 +37,14 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
+    public boolean isEmpty(Room room) {
+        if (room.getCustomers().isEmpty()){
+            System.out.println("Room is empty.");
+            return true;}
+        return false;
+    }
+
+    @Override
     // Check in
     public void saveCustomer(Customer c) {
         Room selectedRoom = selectRoom();
@@ -51,6 +59,7 @@ public class CustomerService implements ICustomerService {
         }
         for (int i = 0; i < roomToShow.getCustomers().size(); i++) {
             System.out.println(roomToShow.getCustomers().get(i).toString());
+        
         }
     }
 
