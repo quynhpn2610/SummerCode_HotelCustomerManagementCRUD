@@ -2,8 +2,6 @@ package service;
 
 import model.Customer;
 import model.Room;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CustomerService implements ICustomerService {
@@ -11,12 +9,10 @@ public class CustomerService implements ICustomerService {
     Scanner sc = new Scanner(System.in);
 
     static {
-        rooms[0] = new Room(1, 100000);
-        rooms[1] = new Room(2, 200000);
-        rooms[2] = new Room(3, 500000);
+        rooms[0] = new Room(1, 500000);
+        rooms[1] = new Room(2, 1000000);
+        rooms[2] = new Room(3, 1500000);
     }
-
-    ArrayList<Customer> customersList = new ArrayList<>();
 
     @Override
     public Room selectRoom() {
@@ -89,6 +85,15 @@ public class CustomerService implements ICustomerService {
         }
         roomToDelete.getCustomers().removeAll(roomToDelete.getCustomers());
         System.out.println("Successfully deleted");
+    }
+
+    @Override
+    public double calculateCost(Room roomToCalculate) {
+        double rate = roomToCalculate.getRoomRate();
+        Customer c = roomToCalculate.getCustomers().get(0);
+        int lengthOfStay = c.getLengthOfStay();
+        double totalCost = rate * lengthOfStay;
+        return totalCost;
     }
 }
 
