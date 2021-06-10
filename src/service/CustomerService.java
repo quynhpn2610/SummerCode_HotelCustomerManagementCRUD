@@ -35,7 +35,6 @@ public class CustomerService implements ICustomerService {
         }
         return null;
     }
-
     @Override
     // Check in
     public void saveCustomer(Customer c) {
@@ -51,6 +50,7 @@ public class CustomerService implements ICustomerService {
         }
         for (int i = 0; i < roomToShow.getCustomers().size(); i++) {
             System.out.println(roomToShow.getCustomers().get(i).toString());
+        
         }
     }
 

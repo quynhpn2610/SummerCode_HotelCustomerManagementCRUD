@@ -18,6 +18,4 @@ public interface ICustomerService {
 
     Room selectRoom();
 
-
-
 }
