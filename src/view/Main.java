@@ -28,11 +28,15 @@ public class Main {
                         Customer updatedCustomer = Menu.getUpdatedCustomerInfo();
                         cService.updateCustomer(roomToUpdate, idToUpdate, updatedCustomer.getName(), updatedCustomer.getId(), updatedCustomer.getLengthOfStay());
                         break;
-                    case 4: // Delete
+                    case 4: // Calculate Cost
+                        Room roomToCalculate = Menu.getRoomNumber();
+                        cService.calculateCost(roomToCalculate);
+                        break;
+                    case 5: // Delete
                         Room roomToDelete = Menu.getRoomNumber();
                         cService.deleteCustomer(roomToDelete);
                         break;
-                    case 5: // Quit
+                    case 6: // Quit
                         System.out.println("Closing program!");
                         condition = false;
                         break;

@@ -17,8 +17,9 @@ public class Menu {
         System.out.println("1 - Check in");
         System.out.println("2 - Show all customers in a room");
         System.out.println("3 - Update a customer's info");
-        System.out.println("4 - Check out");
-        System.out.println("5 - Quit program");
+        System.out.println("4 - Calculate Cost");
+        System.out.println("5 - Check out");
+        System.out.println("6 - Quit program");
     }
 
     static int getUserChoice(){
