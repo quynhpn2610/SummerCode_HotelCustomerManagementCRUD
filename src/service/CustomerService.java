@@ -86,6 +86,15 @@ public class CustomerService implements ICustomerService {
         roomToDelete.getCustomers().removeAll(roomToDelete.getCustomers());
         System.out.println("Successfully deleted");
     }
+
+    @Override
+    public double calculateCost(Room roomToCalculate) {
+        double rate = roomToCalculate.getRoomRate();
+        Customer c = roomToCalculate.getCustomers().get(0);
+        int lengthOfStay = c.getLengthOfStay();
+        double totalCost = rate * lengthOfStay;
+        return totalCost;
+    }
 }
 
 
