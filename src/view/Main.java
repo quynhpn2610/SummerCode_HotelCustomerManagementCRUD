@@ -14,7 +14,7 @@ public class Main {
             try{
                 int userChoice = Menu.getUserChoice();
                 switch (userChoice){
-                    case 1: // Create/Save/Add
+                    case 1: // Create/Save/Add - check in
                         Customer newCustomer = Menu.getCustomerToAdd();
                         cService.saveCustomer(newCustomer);
                         break;
@@ -28,7 +28,7 @@ public class Main {
                         Customer updatedCustomer = Menu.getUpdatedCustomerInfo();
                         cService.updateCustomer(roomToUpdate, idToUpdate, updatedCustomer.getName(), updatedCustomer.getId(), updatedCustomer.getLengthOfStay());
                         break;
-                    case 4: // Delete
+                    case 4: // Delete - check out
                         Room roomToDelete = Menu.getRoomNumber();
                         cService.deleteCustomer(roomToDelete);
                         break;
