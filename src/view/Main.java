@@ -18,11 +18,11 @@ public class Main {
                         Customer newCustomer = Menu.getCustomerToAdd();
                         cService.saveCustomer(newCustomer);
                         break;
-                    case 2: // Read customers in a room
+                    case 2: // Show customers in a room
                         Room roomToShow = Menu.getRoomNumber();
                         cService.showCustomer(roomToShow);
                         break;
-                    case 3:
+                    case 3: // Show all
                         cService.showAll();
                         break;
                     case 4: // Update

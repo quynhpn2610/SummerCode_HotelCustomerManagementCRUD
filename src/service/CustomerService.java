@@ -61,7 +61,8 @@ public class CustomerService implements ICustomerService {
                 continue;
             }
             for (int j = 0; j < rooms[i].getCustomers().size(); j++) {
-                rooms[i].getCustomers().get(j).toString();
+                System.out.println("Room " + (i+1));
+                System.out.println(rooms[i].getCustomers().get(j).toString());
             }
         }
     }
