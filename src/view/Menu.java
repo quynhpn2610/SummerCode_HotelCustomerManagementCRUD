@@ -1,23 +1,17 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package view;
 
-import java.util.Scanner;
 import model.Customer;
 import model.Room;
 import service.CustomerService;
+import java.util.Scanner;
+
+import static service.CustomerService.rooms;
 
 public class Menu {
-    private static final Scanner sc;
-    private static final CustomerService customerService;
+    private static final Scanner sc = new Scanner(System.in);
+    private static final CustomerService customerService = new CustomerService();
 
-    public Menu() {
-    }
-
-    static void showMenu() {
+    static void showMenu(){
         System.out.println("Welcome to the Hotel Customer Management program");
         System.out.println("------Please select an option------");
         System.out.println("1 - Check in");
@@ -27,11 +21,11 @@ public class Menu {
         System.out.println("5 - Quit program");
     }
 
-    static int getUserChoice() {
+    static int getUserChoice(){
         return Integer.parseInt(sc.nextLine());
     }
 
-    static Customer getCustomerToAdd() {
+    static Customer getCustomerToAdd(){
         System.out.println("---Add a new customer---");
         System.out.println("Enter customer id");
         int idToAdd = Integer.parseInt(sc.nextLine());
@@ -42,18 +36,18 @@ public class Menu {
         return new Customer(nameToAdd, idToAdd, lengthOfStay);
     }
 
-    static Room getRoomNumber() {
+    static Room getRoomNumber(){
         System.out.println("Enter room number");
         int roomNumber = Integer.parseInt(sc.nextLine());
-        return CustomerService.rooms[roomNumber - 1];
+        return rooms[roomNumber-1];
     }
 
-    static int getIdToUpdate() {
+    static int getIdToUpdate(){
         System.out.println("Enter customer id");
-        return Integer.parseInt(sc.nextLine());
+        return (Integer.parseInt(sc.nextLine()));
     }
 
-    static Customer getUpdatedCustomerInfo() {
+    static Customer getUpdatedCustomerInfo(){
         System.out.println("---Update new info---");
         System.out.println("Enter updated id");
         int newId = Integer.parseInt(sc.nextLine());
@@ -62,10 +56,5 @@ public class Menu {
         System.out.println("Enter updated length of stay");
         int newLength = Integer.parseInt(sc.nextLine());
         return new Customer(newName, newId, newLength);
-    }
-
-    static {
-        sc = new Scanner(System.in);
-        customerService = new CustomerService();
     }
 }
