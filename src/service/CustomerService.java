@@ -2,8 +2,6 @@ package service;
 
 import model.Customer;
 import model.Room;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CustomerService implements ICustomerService {
@@ -15,8 +13,6 @@ public class CustomerService implements ICustomerService {
         rooms[1] = new Room(2, 200000);
         rooms[3] = new Room(3, 500000);
     }
-
-    ArrayList<Customer> customersList = new ArrayList<>();
 
     @Override
     public Room selectRoom() {
