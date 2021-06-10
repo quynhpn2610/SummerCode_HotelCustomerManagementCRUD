@@ -16,4 +16,6 @@ public interface ICustomerService {
 
     Room selectRoom();
 
+    boolean isEmpty(Room r);
+
 }
