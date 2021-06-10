@@ -14,7 +14,7 @@ public interface ICustomerService {
 
     void deleteCustomer(Room r);
 
-    double calculateCost(Room r);
+    void calculateCost(Room r);
 
     Room selectRoom();
 

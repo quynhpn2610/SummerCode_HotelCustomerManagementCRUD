@@ -101,12 +101,12 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public double calculateCost(Room roomToCalculate) {
-        double rate = roomToCalculate.getRoomRate();
+    public void calculateCost(Room roomToCalculate) {
+        float rate = (float) roomToCalculate.getRoomRate();
         Customer c = roomToCalculate.getCustomers().get(0);
         int lengthOfStay = c.getLengthOfStay();
-        double totalCost = rate * lengthOfStay;
-        return totalCost;
+        float totalCost = rate * lengthOfStay;
+        System.out.println("Total: " + totalCost);
     }
 }
 
