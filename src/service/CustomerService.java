@@ -53,10 +53,25 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public void showAllCustomer(Room roomToShow) {
-        if (!isEmpty(roomToShow)) {
-            for (int i = 0; i < roomToShow.getCustomers().size(); i++) {
-                System.out.println(roomToShow.getCustomers().get(i).toString());
+    public void showCustomer(Room roomToShow) {
+        if (roomToShow.getCustomers().isEmpty()) {
+            System.out.println("No customer to show");
+        }
+        for (int i = 0; i < roomToShow.getCustomers().size(); i++) {
+            System.out.println(roomToShow.getCustomers().get(i).toString());
+        
+        }
+    }
+
+    @Override
+    public void showAll() {
+        for (int i = 0; i < rooms.length; i++) {
+            if (rooms[i].getCustomers().isEmpty()){
+                continue;
+            }
+            for (int j = 0; j < rooms[i].getCustomers().size(); j++) {
+                System.out.println("Room " + (i+1));
+                System.out.println(rooms[i].getCustomers().get(j).toString());
             }
         }
     }
@@ -95,12 +110,12 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public double calculateCost(Room roomToCalculate) {
-        double rate = roomToCalculate.getRoomRate();
+    public void calculateCost(Room roomToCalculate) {
+        float rate = (float) roomToCalculate.getRoomRate();
         Customer c = roomToCalculate.getCustomers().get(0);
         int lengthOfStay = c.getLengthOfStay();
-        double totalCost = rate * lengthOfStay;
-        return totalCost;
+        float totalCost = rate * lengthOfStay;
+        System.out.println("Total: " + totalCost);
     }
 }
 

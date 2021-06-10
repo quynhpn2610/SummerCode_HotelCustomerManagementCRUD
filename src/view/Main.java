@@ -18,21 +18,28 @@ public class Main {
                         Customer newCustomer = Menu.getCustomerToAdd();
                         cService.saveCustomer(newCustomer);
                         break;
-                    case 2: // Read all
+                    case 2: // Show customers in a room
                         Room roomToShow = Menu.getRoomNumber();
-                        cService.showAllCustomer(roomToShow);
+                        cService.showCustomer(roomToShow);
                         break;
-                    case 3: // Update
+                    case 3: // Show all
+                        cService.showAll();
+                        break;
+                    case 4: // Update
                         Room roomToUpdate = Menu.getRoomNumber();
                         int idToUpdate = Menu.getIdToUpdate();
                         Customer updatedCustomer = Menu.getUpdatedCustomerInfo();
                         cService.updateCustomer(roomToUpdate, idToUpdate, updatedCustomer.getName(), updatedCustomer.getId(), updatedCustomer.getLengthOfStay());
                         break;
-                    case 4: // Delete - check out
+                    case 5: // Calculate Cost
+                        Room roomToCalculate = Menu.getRoomNumber();
+                        cService.calculateCost(roomToCalculate);
+                        break;
+                    case 6: // Delete
                         Room roomToDelete = Menu.getRoomNumber();
                         cService.deleteCustomer(roomToDelete);
                         break;
-                    case 5: // Quit
+                    case 7: // Quit
                         System.out.println("Closing program!");
                         condition = false;
                         break;

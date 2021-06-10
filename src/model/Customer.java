@@ -35,9 +35,6 @@ public class Customer {
         this.lengthOfStay = lengthOfStay;
     }
 
-    public Customer() {
-    }
-
     @Override
     public String toString() {
         return "Customer{" +

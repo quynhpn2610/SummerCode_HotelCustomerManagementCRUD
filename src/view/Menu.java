@@ -16,9 +16,11 @@ public class Menu {
         System.out.println("------Please select an option------");
         System.out.println("1 - Check in");
         System.out.println("2 - Show all customers in a room");
-        System.out.println("3 - Update a customer's info");
-        System.out.println("4 - Check out");
-        System.out.println("5 - Quit program");
+        System.out.println("3 - Show all customers");
+        System.out.println("4 - Update a customer's info");
+        System.out.println("5 - Calculate Cost");
+        System.out.println("6 - Check out");
+        System.out.println("7 - Quit program");
     }
 
     static int getUserChoice(){
