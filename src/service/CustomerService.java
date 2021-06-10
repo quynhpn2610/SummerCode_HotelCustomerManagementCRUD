@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CustomerService implements ICustomerService {
-    static Room[] rooms = new Room[3];
+    public static Room[] rooms = new Room[3];
     Scanner sc = new Scanner(System.in);
 
     static {
@@ -82,7 +82,7 @@ public class CustomerService implements ICustomerService {
 
     @Override
     // Check out
-    public void deleteCustomer(Room roomToDelete, int id) {
+    public void deleteCustomer(Room roomToDelete) {
         if (roomToDelete.getCustomers().isEmpty()) {
             System.out.println("Room empty. No customer to check out!");
             return;
