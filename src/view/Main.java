@@ -47,7 +47,7 @@ public class Main {
                         System.out.println("Invalid input. Please try again.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please try again.");;
+                System.out.println("Invalid input. Please try again.");
             }
         }
     }
