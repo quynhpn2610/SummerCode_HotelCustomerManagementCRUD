@@ -1,4 +1,5 @@
 package view;
+
 import model.Room;
 import model.Customer;
 import service.ICustomerService;
@@ -9,11 +10,11 @@ public class Main {
 
     public static void main(String[] args) {
         boolean condition = true;
-        while (condition){
+        while (condition) {
             Menu.showMenu();
-            try{
+            try {
                 int userChoice = Menu.getUserChoice();
-                switch (userChoice){
+                switch (userChoice) {
                     case 1: // Create/Save/Add - check in
                         Customer newCustomer = Menu.getCustomerToAdd();
                         cService.saveCustomer(newCustomer);
