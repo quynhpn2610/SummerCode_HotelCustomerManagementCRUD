@@ -61,7 +61,7 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public void showAll() {
-        try {IO.readFile();
+        try {rooms = IO.readFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -96,6 +96,11 @@ public class CustomerService implements ICustomerService {
             System.out.println("Cannot update");
         }
         System.out.println("Customer successfully updated");
+        try {
+            IO.writeFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -107,6 +112,11 @@ public class CustomerService implements ICustomerService {
         }
         roomToDelete.getCustomers().removeAll(roomToDelete.getCustomers());
         System.out.println("Successfully deleted");
+        try {
+            IO.writeFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
