@@ -3,8 +3,10 @@ package service;
 import model.Customer;
 import model.Room;
 
+import java.io.IOException;
+
 public interface ICustomerService {
-    void saveCustomer(Customer c);
+    void saveCustomer(Customer c) throws IOException;
 
     void showCustomer(Room r);
 

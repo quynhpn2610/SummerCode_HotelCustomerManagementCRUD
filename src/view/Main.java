@@ -5,6 +5,8 @@ import model.Customer;
 import service.ICustomerService;
 import service.CustomerService;
 
+import java.io.IOException;
+
 public class Main {
     private static final ICustomerService cService = new CustomerService();
 
@@ -47,7 +49,7 @@ public class Main {
                     default: // When user fails to input 1-5
                         System.out.println("Invalid input. Please try again.");
                 }
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException | IOException e) {
                 System.out.println("Invalid input. Please try again.");
             }
         }
