@@ -3,6 +3,9 @@ package view;
 import model.Customer;
 import model.Room;
 import service.CustomerService;
+import service.IO;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 import static service.CustomerService.rooms;
@@ -38,9 +41,10 @@ public class Menu {
         return new Customer(nameToAdd, idToAdd, lengthOfStay);
     }
 
-    static Room getRoomNumber(){
+    static Room getRoomNumber() throws IOException {
         System.out.println("Enter room number");
         int roomNumber = Integer.parseInt(sc.nextLine());
+        rooms = IO.readFile();
         return rooms[roomNumber-1];
     }
 

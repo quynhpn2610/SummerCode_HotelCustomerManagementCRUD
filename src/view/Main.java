@@ -1,19 +1,22 @@
 package view;
+
 import model.Room;
 import model.Customer;
 import service.ICustomerService;
 import service.CustomerService;
+
+import java.io.IOException;
 
 public class Main {
     private static final ICustomerService cService = new CustomerService();
 
     public static void main(String[] args) {
         boolean condition = true;
-        while (condition){
+        while (condition) {
             Menu.showMenu();
-            try{
+            try {
                 int userChoice = Menu.getUserChoice();
-                switch (userChoice){
+                switch (userChoice) {
                     case 1: // Create/Save/Add - check in
                         Customer newCustomer = Menu.getCustomerToAdd();
                         cService.saveCustomer(newCustomer);
@@ -46,8 +49,8 @@ public class Main {
                     default: // When user fails to input 1-5
                         System.out.println("Invalid input. Please try again.");
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please try again.");;
+            } catch (NumberFormatException | IOException e) {
+                System.out.println("Invalid input. Please try again.");
             }
         }
     }

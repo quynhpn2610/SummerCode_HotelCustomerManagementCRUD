@@ -2,11 +2,14 @@ package service;
 
 import model.Customer;
 import model.Room;
+
+import java.io.*;
 import java.util.Scanner;
 
 public class CustomerService implements ICustomerService {
     public static Room[] rooms = new Room[3];
     Scanner sc = new Scanner(System.in);
+
 
     static {
         rooms[0] = new Room(1, 500000);
@@ -30,26 +33,19 @@ public class CustomerService implements ICustomerService {
                 case 3:
                     return rooms[2];
             }
-        } catch (NumberFormatException exception){
+        } catch (NumberFormatException exception) {
             System.out.println("Invalid input. Please try again.");
         }
         return null;
     }
 
     @Override
-    public boolean isEmpty(Room room) {
-        if (room.getCustomers().isEmpty()){
-            System.out.println("Room is empty.");
-            return true;}
-        return false;
-    }
-
-    @Override
     // Check in
-    public void saveCustomer(Customer c) {
+    public void saveCustomer(Customer c) throws IOException {
         Room selectedRoom = selectRoom();
         selectedRoom.addCustomers(c);
         System.out.println("Check in successfully");
+        IO.writeFile();
     }
 
     @Override
@@ -59,18 +55,22 @@ public class CustomerService implements ICustomerService {
         }
         for (int i = 0; i < roomToShow.getCustomers().size(); i++) {
             System.out.println(roomToShow.getCustomers().get(i).toString());
-        
+
         }
     }
 
     @Override
     public void showAll() {
+        try {rooms = IO.readFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         for (int i = 0; i < rooms.length; i++) {
-            if (rooms[i].getCustomers().isEmpty()){
+            if (rooms[i].getCustomers().isEmpty()) {
                 continue;
             }
             for (int j = 0; j < rooms[i].getCustomers().size(); j++) {
-                System.out.println("Room " + (i+1));
+                System.out.println("Room " + (i + 1));
                 System.out.println(rooms[i].getCustomers().get(j).toString());
             }
         }
@@ -96,6 +96,11 @@ public class CustomerService implements ICustomerService {
             System.out.println("Cannot update");
         }
         System.out.println("Customer successfully updated");
+        try {
+            IO.writeFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -107,6 +112,11 @@ public class CustomerService implements ICustomerService {
         }
         roomToDelete.getCustomers().removeAll(roomToDelete.getCustomers());
         System.out.println("Successfully deleted");
+        try {
+            IO.writeFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
