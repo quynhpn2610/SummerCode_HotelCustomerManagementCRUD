@@ -7,8 +7,8 @@ import java.io.*;
 import static service.CustomerService.rooms;
 
 public class IO {
-    public static File file = new File("rooms.txt");
-    final static String filePath = "rooms.txt";
+    final static String filePath = System.getenv("file_path");
+    public static File file = new File(filePath);
     public static void writeFile() throws IOException {
         if (!file.exists()) {
             file.createNewFile();
